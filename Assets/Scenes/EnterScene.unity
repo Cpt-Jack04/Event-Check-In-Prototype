@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ca6ec22551a08344982d5427a7244fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uploadeAfterCount: 10
   nameField: {fileID: 590489944}
   employeeIDField: {fileID: 974368092}
 --- !u!1 &415845148

@@ -45,8 +45,16 @@ public class AppManager : MonoBehaviour
     /// <param name="newEventName"> String of the new event name. </param>
     public void UpdateEventName(string newEventName)
     {
-        currentEventName = newEventName;
-        eventName.text = newEventName;
+        // Is this a new event?
+        if (!currentEventName.Equals(newEventName))
+        {
+            currentEventName = newEventName;
+
+            GetComponent<DataManager>().UploadToFirebase();
+        }
+        
+        // Updates UI elements
+        eventName.text = currentEventName;
         placeHolderText.enabled = false;
         headerText.text += currentEventName + "!";
         UpdateEventInputActive(false);
